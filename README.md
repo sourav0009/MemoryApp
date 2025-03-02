@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MemoryApp
 
-## Getting Started
+MemoryApp is a full-stack web application for users to upload and showcase their favorite memories. The app features user authentication, image uploads, and a mosaic-style image display.
 
-First, run the development server:
+## Features
+- User authentication (SignUp & Login)
+- Upload and display images
+- Profile management
+- Public user page
+- Cloud storage integration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Frontend:** React (Next.js), Tailwind CSS
+- **Backend:** Node.js (Express)
+- **Database:** MongoDB
+- **Authentication:** Firebase
+- **Image Uploads:** Cloudinary & Multer
+
+## Installation & Setup
+### Prerequisites
+- Node.js (v18+)
+- MongoDB
+- Cloudinary Account
+- Firebase Account
+
+### Steps to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/MemoryApp.git
+   cd MemoryApp-main
+   ```
+
+2. Install dependencies:
+   ```bash
+   yarn install  # or npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add:
+   ```env
+   MONGO_URI=your_mongo_connection_string
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+   CLOUDINARY_API_KEY=your_cloudinary_api_key
+   CLOUDINARY_API_SECRET=your_cloudinary_secret
+   FIREBASE_API_KEY=your_firebase_api_key
+   FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   ```
+
+4. Run the application:
+   ```bash
+   yarn dev  # or npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+```
+MemoryApp-main/
+├── app/
+│   ├── api/                 # API routes
+│   ├── user/                # User-related pages
+│   ├── login/               # Login page
+│   ├── signup/              # Signup page
+│   ├── layout.jsx           # Main layout
+│   ├── page.jsx             # Landing page
+│   ├── globals.css          # Global styles
+├── config/                  # Configurations (Cloudinary, Firebase, Multer)
+├── lib/                     # Database connection (MongoDB)
+├── model/                   # Mongoose models
+├── utils/                   # Helper functions
+├── package.json             # Project dependencies
+├── next.config.mjs          # Next.js config
+├── .gitignore               # Git ignore file
+└── README.md                # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Routes
+- `POST /api/register` - Register a new user
+- `POST /api/login` - Authenticate user
+- `POST /api/upload` - Upload an image
+- `GET /api/get-memory` - Fetch uploaded memories
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deployment
+You can deploy the application using Vercel, Netlify, or a cloud provider.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License.
