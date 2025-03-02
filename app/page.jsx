@@ -93,7 +93,7 @@ export default function Home() {
             href="http://localhost:3000/user/profile"
             className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
           >
-            Uplode photo
+            Uplod photo
           </a>
       </div>
     </div>

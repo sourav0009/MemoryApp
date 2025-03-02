@@ -20,8 +20,8 @@ const LoginPage = () => {
     });
     const data = await result.json();
     if (result.ok) {
-      alert("Login successful");
       router.push("/");
+      alert("Login successful");
     } else {
       alert("Invalid credentials");
     }
